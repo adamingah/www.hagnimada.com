@@ -1,0 +1,47 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('hagnimada-auth') === 'ok') return;
+      } catch (e) { /* localStorage unavailable — fall through to prompt */ }
+      while (true) {
+        var pw = window.prompt('Password:');
+        if (pw === 'adamingah') {
+          try { localStorage.setItem('hagnimada-auth', 'ok'); } catch (e) {}
+          return;
+        }
+        if (pw === null) {
+          document.documentElement.innerHTML = '';
+          window.stop();
+          return;
+        }
+      }
+    }());
+  </script>
+
+  {%- assign page_title = page.title | default: site.title -%}
+  {%- assign page_desc = page.description | default: site.description -%}
+  {%- assign page_url = page.url | absolute_url -%}
+
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ page_desc }}">
+  <meta name="author" content="{{ site.author }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_desc }}">
+  <meta property="og:url" content="{{ page_url }}">
+  <meta property="og:image" content="{{ '/favicon.png' | absolute_url }}">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="canonical" href="{{ page_url }}">
+  <link rel="icon" href="{{ '/favicon.png' | relative_url }}" type="image/png">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>

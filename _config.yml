@@ -1,0 +1,20 @@
+title: hagnimada
+description: The backside of adamingah — a personal corner of the internet.
+url: https://hagnimada.com
+author: Adam Ingah
+
+permalink: /:path/
+
+exclude:
+  - readme.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .claude
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default

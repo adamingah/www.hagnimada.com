@@ -1,0 +1,183 @@
+/* ---------- Tokens ---------- */
+:root {
+  --font-mono: "Courier New", Courier, ui-monospace, SFMono-Regular, Menlo, monospace;
+  --color-text: #000;
+  --color-link: #0000ff;
+  --color-muted: #555;
+  --color-border: #ccc;
+  --max-width: 800px;
+  --space: 1rem;
+  --space-lg: 2rem;
+}
+
+/* ---------- Reset / base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-mono);
+  color: var(--color-text);
+  text-align: left;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space);
+  line-height: 1.5;
+}
+
+main { display: block; }
+
+img, iframe { max-width: 100%; }
+img { height: auto; }
+
+/* Anchors */
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+a:hover,
+a:focus-visible { text-decoration: underline; }
+a:focus-visible {
+  outline: 2px solid var(--color-link);
+  outline-offset: 2px;
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0.5rem;
+  background: #fff;
+}
+
+/* ---------- Header / footer ---------- */
+.site-header {
+  font-family: var(--font-mono);
+  text-align: center;
+  margin: var(--space-lg) 0;
+}
+.header-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.header-link:hover,
+.header-link:focus-visible { text-decoration: underline; }
+
+.site-footer {
+  font-family: var(--font-mono);
+  text-align: center;
+  padding: var(--space-lg) var(--space);
+  margin-top: var(--space-lg);
+  color: var(--color-text);
+}
+.site-footer p { margin: 0 0 0.5rem; }
+
+/* ---------- Hover image preview ---------- */
+/*
+  Desktop (hover-capable): image floats below trigger on hover.
+  Touch (no hover): tap the trigger → image floats below; tap again
+  follows the link (site.js handles this). The .is-open class is set
+  by JS on touch so CSS doesn't need to know about device type.
+*/
+.hover-image-text {
+  position: relative;
+  cursor: pointer;
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.hover-image {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  max-width: 80vw;
+  height: auto;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--color-border);
+  background: #fff;
+}
+
+@media (hover: hover) {
+  .hover-image-text:hover .hover-image,
+  .hover-image-text:focus-within .hover-image {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.hover-image-text.is-open .hover-image {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- Responsive image helper ---------- */
+.responsive-image {
+  display: block;
+  max-width: 90%;
+  height: auto;
+  margin: var(--space-lg) auto;
+}
+
+/* ---------- Portfolio list ---------- */
+.portfolio-year {
+  margin: var(--space-lg) 0 var(--space);
+  font-weight: bold;
+}
+.portfolio-year ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.portfolio-year li { margin: 0.25rem 0; }
+
+/* ---------- Project page ---------- */
+.project-meta {
+  color: var(--color-muted);
+  margin-top: -0.5rem;
+}
+
+.project h2 { margin-top: var(--space-lg); }
+.project h3 { margin-top: var(--space); }
+
+.project code {
+  font-family: var(--font-mono);
+  background: #f4f4f4;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+/* ---------- Mobile tweaks ---------- */
+@media (max-width: 600px) {
+  body {
+    padding: var(--space) 0.75rem;
+  }
+  .site-header { margin: var(--space) 0; }
+  .site-footer { padding: var(--space) 0.75rem; }
+  .responsive-image { max-width: 100%; }
+  iframe { width: 100%; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
