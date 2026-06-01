@@ -9,7 +9,7 @@
       } catch (e) { /* localStorage unavailable — fall through to prompt */ }
       while (true) {
         var pw = window.prompt('Password:');
-        if (pw === 'adamingah') {
+        if (pw === 'adamingah') { /* I know this isn't secure. Lol. */
           try { localStorage.setItem('hagnimada-auth', 'ok'); } catch (e) {}
           return;
         }
