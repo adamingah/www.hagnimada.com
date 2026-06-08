@@ -4,6 +4,71 @@ title: countries — hagnimada
 description: Places I've been.
 permalink: /countries/
 ---
-<p>Coming soon.</p>
+
+<div id="map"></div>
+
+<ul class="country-list">
+  <li><a href="{{ '/countries/canada/' | relative_url }}">🇨🇦 Canada</a></li>
+  <li><a href="{{ '/countries/usa/' | relative_url }}">🇺🇸 United States</a></li>
+  <li><a href="{{ '/countries/japan/' | relative_url }}">🇯🇵 Japan</a></li>
+  <li><a href="{{ '/countries/singapore/' | relative_url }}">🇸🇬 Singapore</a></li>
+  <li><a href="{{ '/countries/thailand/' | relative_url }}">🇹🇭 Thailand</a></li>
+  <li><a href="{{ '/countries/malaysia/' | relative_url }}">🇲🇾 Malaysia</a></li>
+  <li><a href="{{ '/countries/indonesia/' | relative_url }}">🇮🇩 Indonesia</a></li>
+</ul>
 
 <p><a href="{{ '/' | relative_url }}">← back</a></p>
+
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
+<script>
+  var chart = am4core.create("map", am4maps.MapChart);
+  chart.geodata = am4geodata_worldLow;
+  chart.projection = new am4maps.projections.Miller();
+  chart.homeZoomLevel = 1;
+
+  var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+  polygonSeries.useGeodata = true;
+  polygonSeries.exclude = ["AQ"];
+
+  var polygonTemplate = polygonSeries.mapPolygons.template;
+  polygonTemplate.fill = am4core.color("#e0e0e0");
+  polygonTemplate.stroke = am4core.color("#fff");
+  polygonTemplate.strokeWidth = 0.5;
+  polygonTemplate.tooltipText = "{name}";
+
+  var hoverState = polygonTemplate.states.create("hover");
+  hoverState.properties.fill = am4core.color("#aaa");
+
+  var visitedSeries = chart.series.push(new am4maps.MapPolygonSeries());
+  visitedSeries.useGeodata = true;
+  visitedSeries.include = ["CA", "US", "JP", "SG", "TH", "MY", "ID"];
+
+  var visitedTemplate = visitedSeries.mapPolygons.template;
+  visitedTemplate.fill = am4core.color("#0000ff");
+  visitedTemplate.stroke = am4core.color("#fff");
+  visitedTemplate.strokeWidth = 0.5;
+  visitedTemplate.tooltipText = "{name}";
+  visitedTemplate.fillOpacity = 0.85;
+
+  var visitedHover = visitedTemplate.states.create("hover");
+  visitedHover.properties.fill = am4core.color("#0000cc");
+
+  chart.zoomControl = new am4maps.ZoomControl();
+</script>
+
+<style>
+  #map {
+    width: 100%;
+    height: 420px;
+    margin-bottom: 1.5rem;
+  }
+  .country-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    columns: 2;
+  }
+  .country-list li { margin: 0.3rem 0; }
+</style>

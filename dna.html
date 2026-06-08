@@ -1,0 +1,249 @@
+---
+layout: default
+title: DNA results — hagnimada
+description: My ancestry composition from a DNA test.
+permalink: /dna/
+---
+
+<h2>23andMe</h2>
+<p>The company has since gone bankrupt, make of it what you will. I'd say 90% of the traits report is true.</p>
+
+<div class="dna-chart-wrap">
+  <canvas id="dnaChart"></canvas>
+</div>
+
+<div class="dna-drill">
+  <p class="dna-drill-label">Click a segment to see the breakdown.</p>
+</div>
+
+<table class="dna-table">
+  <thead>
+    <tr><th>Ancestry</th><th>%</th></tr>
+  </thead>
+  <tbody>
+    <tr class="dna-group"><td>East Asian</td><td>91.1%</td></tr>
+    <tr><td>&nbsp;&nbsp;&nbsp;Indonesian, Thai, Khmer &amp; Myanma</td><td>71.9%</td></tr>
+    <tr><td>&nbsp;&nbsp;&nbsp;Filipino &amp; Austronesian</td><td>15.3%</td></tr>
+    <tr><td>&nbsp;&nbsp;&nbsp;Chinese</td><td>3.1%</td></tr>
+    <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Southern Chinese &amp; Taiwanese</td><td>3.1%</td></tr>
+    <tr><td>&nbsp;&nbsp;&nbsp;Broadly East Asian</td><td>0.8%</td></tr>
+    <tr class="dna-group"><td>Western Asian &amp; North African</td><td>4.9%</td></tr>
+    <tr><td>&nbsp;&nbsp;&nbsp;Arab, Egyptian &amp; Levantine</td><td>4.9%</td></tr>
+    <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Peninsular Arab</td><td>4.9%</td></tr>
+    <tr class="dna-group"><td>Central &amp; South Asian</td><td>3.4%</td></tr>
+    <tr><td>&nbsp;&nbsp;&nbsp;Southern Indian &amp; Sri Lankan</td><td>2.9%</td></tr>
+    <tr><td>&nbsp;&nbsp;&nbsp;Broadly Central &amp; South Asian</td><td>0.5%</td></tr>
+    <tr class="dna-group"><td>Sub-Saharan African</td><td>0.5%</td></tr>
+    <tr><td>&nbsp;&nbsp;&nbsp;Congolese &amp; Southern East African</td><td>0.5%</td></tr>
+    <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Southern East African</td><td>0.5%</td></tr>
+    <tr class="dna-group"><td>Unassigned</td><td>0.1%</td></tr>
+  </tbody>
+</table>
+
+<table class="dna-table dna-haplo">
+  <thead>
+    <tr><th>Other</th><th></th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Maternal Haplogroup</td><td>W4</td></tr>
+    <tr><td>Paternal Haplogroup</td><td>O-F706</td></tr>
+    <tr><td>Neanderthal Ancestry</td><td>Fewer variants than 99% of customers</td></tr>
+  </tbody>
+</table>
+
+<h2>Wellness Reports</h2>
+<table class="dna-table">
+  <thead>
+    <tr><th>Trait</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Alcohol Flush Reaction</td><td>Unlikely to flush</td></tr>
+    <tr><td>Caffeine Consumption</td><td>Likely to consume less</td></tr>
+    <tr><td>Deep Sleep</td><td>Less likely to be a deep sleeper</td></tr>
+    <tr><td>Muscle Composition</td><td>Common in elite power athletes</td></tr>
+    <tr><td>Sleep Movement</td><td>Likely average or less movement</td></tr>
+    <tr><td>Genetic Weight</td><td>Predisposed to weigh less than average</td></tr>
+    <tr><td>Lactose Intolerance</td><td>Likely intolerant</td></tr>
+    <tr><td>Saturated Fat and Weight</td><td>Likely similar weight</td></tr>
+  </tbody>
+</table>
+
+<h2>Health Predisposition Reports</h2>
+<table class="dna-table">
+  <thead>
+    <tr><th>Condition</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Age-Related Macular Degeneration</td><td class="dna-notable">Variant detected, not likely at increased risk</td></tr>
+    <tr><td>Late-Onset Alzheimer's Disease</td><td class="dna-notable">Slightly increased risk</td></tr>
+    <tr><td>Type 2 Diabetes</td><td class="dna-notable">Increased likelihood</td></tr>
+    <tr><td>Alpha-1 Antitrypsin Deficiency</td><td>Variants not detected</td></tr>
+    <tr><td>Celiac Disease</td><td>Variants not detected</td></tr>
+    <tr><td>Chronic Kidney Disease (APOL1-Related)</td><td>Variants not detected</td></tr>
+    <tr><td>Colorectal Cancer — MUTYH-Associated Polyposis</td><td>Complete tasks to view result</td></tr>
+    <tr><td>Familial Hypercholesterolemia</td><td>Variants not detected</td></tr>
+    <tr><td>G6PD Deficiency</td><td>Variants not detected</td></tr>
+    <tr><td>Hereditary Amyloidosis (TTR-Related)</td><td>Variants not detected</td></tr>
+    <tr><td>Hereditary Hemochromatosis (HFE-Related)</td><td>Variants not detected</td></tr>
+    <tr><td>Hereditary Thrombophilia</td><td>Variants not detected</td></tr>
+    <tr><td>Parkinson's Disease</td><td>Variants not detected</td></tr>
+    <tr><td>Prostate Cancer</td><td>Variants not detected</td></tr>
+  </tbody>
+</table>
+
+<h2>Traits Reports</h2>
+<table class="dna-table">
+  <thead>
+    <tr><th>Trait</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Ability to Match Musical Pitch</td><td>Less likely to be able to match a musical pitch</td></tr>
+    <tr><td>Asparagus Odor Detection</td><td>Likely can smell</td></tr>
+    <tr><td>Back Hair</td><td>Likely little upper back hair</td></tr>
+    <tr><td>Bald Spot</td><td>Likely no bald spot</td></tr>
+    <tr><td>Bitter Taste</td><td>Likely can taste</td></tr>
+    <tr><td>Bunions</td><td>Less likely than average to have had a bunion</td></tr>
+    <tr><td>Cheek Dimples</td><td>Likely no dimples</td></tr>
+    <tr><td>Cilantro Taste Aversion</td><td>Slightly higher odds of disliking cilantro</td></tr>
+    <tr><td>Cleft Chin</td><td>Likely no cleft chin</td></tr>
+    <tr><td>Dandruff</td><td>More likely to get dandruff</td></tr>
+    <tr><td>Earlobe Type</td><td>Likely detached earlobes</td></tr>
+    <tr><td>Early Hair Loss</td><td>Likely no hair loss</td></tr>
+    <tr><td>Earwax Type</td><td>Likely dry earwax</td></tr>
+    <tr><td>Eye Color</td><td>Likely brown or hazel eyes</td></tr>
+    <tr><td>Fear of Heights</td><td>Less likely than average to be afraid of heights</td></tr>
+    <tr><td>Fear of Public Speaking</td><td>Less likely to have a fear of public speaking</td></tr>
+    <tr><td>Finger Length Ratio</td><td>Likely ring finger longer</td></tr>
+    <tr><td>Flat Feet</td><td>More likely than average to have flat feet</td></tr>
+    <tr><td>Freckles</td><td>Likely little freckling</td></tr>
+    <tr><td>Hair Photobleaching</td><td>Less likely to experience hair photobleaching</td></tr>
+    <tr><td>Hair Texture</td><td>Likely straight or wavy</td></tr>
+    <tr><td>Hair Thickness</td><td>More likely to have thick hair</td></tr>
+    <tr><td>Ice Cream Flavor Preference</td><td>About a 50/50 chance of preferring vanilla or chocolate</td></tr>
+    <tr><td>Light or Dark Hair</td><td>Likely dark</td></tr>
+    <tr><td>Misophonia</td><td>Average odds of hating chewing sounds</td></tr>
+    <tr><td>Mosquito Bite Frequency</td><td>Likely bitten as often as others</td></tr>
+    <tr><td>Motion Sickness</td><td>More likely to experience motion sickness</td></tr>
+    <tr><td>Newborn Hair</td><td>Likely lots of baby hair</td></tr>
+    <tr><td>Photic Sneeze Reflex</td><td>Likely no photic sneeze reflex</td></tr>
+    <tr><td>Red Hair</td><td>Likely no red hair</td></tr>
+    <tr><td>Skin Pigmentation</td><td>Likely darker skin</td></tr>
+    <tr><td>Stretch Marks</td><td>About a 50/50 chance of having stretch marks</td></tr>
+    <tr><td>Sweet vs. Salty</td><td>Likely prefers salty</td></tr>
+    <tr><td>Toe Length Ratio</td><td>Likely second toe longer</td></tr>
+    <tr><td>Unibrow</td><td>Likely at least a little unibrow</td></tr>
+    <tr><td>Wake-Up Time</td><td>Likely to wake up around 9:04 am</td></tr>
+    <tr><td>Widow's Peak</td><td>Likely no widow's peak</td></tr>
+  </tbody>
+</table>
+
+<p><a href="{{ '/aboutme/' | relative_url }}">← back to Wikipedia</a></p>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const topLevel = [
+    { label: 'East Asian',                    value: 91.1, color: '#4e9af1' },
+    { label: 'Western Asian & North African', value: 4.9,  color: '#f4a261' },
+    { label: 'Central & South Asian',         value: 3.4,  color: '#2a9d8f' },
+    { label: 'Sub-Saharan African',           value: 0.5,  color: '#e76f51' },
+    { label: 'Unassigned',                    value: 0.1,  color: '#ccc'    },
+  ];
+
+  const drillDown = {
+    'East Asian': [
+      { label: 'Indonesian, Thai, Khmer & Myanma', value: 71.9, color: '#1a6fc4' },
+      { label: 'Filipino & Austronesian',           value: 15.3, color: '#4e9af1' },
+      { label: 'Southern Chinese & Taiwanese',      value: 3.1,  color: '#7dbeff' },
+      { label: 'Broadly East Asian',                value: 0.8,  color: '#b3d9ff' },
+    ],
+    'Western Asian & North African': [
+      { label: 'Peninsular Arab', value: 4.9, color: '#f4a261' },
+    ],
+    'Central & South Asian': [
+      { label: 'Southern Indian & Sri Lankan',   value: 2.9, color: '#2a9d8f' },
+      { label: 'Broadly Central & South Asian',  value: 0.5, color: '#80cfc9' },
+    ],
+    'Sub-Saharan African': [
+      { label: 'Southern East African', value: 0.5, color: '#e76f51' },
+    ],
+    'Unassigned': [
+      { label: 'Unassigned', value: 0.1, color: '#ccc' },
+    ],
+  };
+
+  function buildChart(data) {
+    return new Chart(document.getElementById('dnaChart'), {
+      type: 'doughnut',
+      data: {
+        labels: data.map(d => d.label),
+        datasets: [{
+          data: data.map(d => d.value),
+          backgroundColor: data.map(d => d.color),
+          borderWidth: 2,
+          borderColor: '#fff',
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' },
+          tooltip: {
+            callbacks: {
+              label: ctx => ` ${ctx.parsed}%`
+            }
+          }
+        },
+        onClick(e, elements) {
+          if (!elements.length) return;
+          const clicked = topLevel[elements[0].index];
+          if (!drillDown[clicked.label]) return;
+          chart.destroy();
+          chart = buildChart(drillDown[clicked.label]);
+          document.querySelector('.dna-drill-label').innerHTML =
+            `<strong>${clicked.label}</strong> — <a href="#" id="dna-back">← back to overview</a>`;
+          document.getElementById('dna-back').addEventListener('click', e => {
+            e.preventDefault();
+            chart.destroy();
+            chart = buildChart(topLevel);
+            document.querySelector('.dna-drill-label').textContent = 'Click a segment to see the breakdown.';
+          });
+        }
+      }
+    });
+  }
+
+  let chart = buildChart(topLevel);
+</script>
+
+<style>
+  body { font-family: sans-serif; }
+  .dna-chart-wrap {
+    max-width: 420px;
+    margin: 1.5rem auto;
+  }
+  .dna-drill {
+    text-align: center;
+    font-size: 0.9em;
+    margin-bottom: 1.5rem;
+    color: var(--color-muted);
+  }
+  .dna-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    margin-bottom: 1.5rem;
+  }
+  .dna-table th {
+    text-align: left;
+    border-bottom: 2px solid var(--color-border);
+    padding: 0.3rem 0.5rem;
+  }
+  .dna-table td {
+    padding: 0.25rem 0.5rem;
+    border-bottom: 1px solid #eee;
+  }
+  .dna-table td:last-child { text-align: right; }
+  .dna-group td { font-weight: bold; background: #f8f9fa; }
+  .dna-haplo { margin-top: 1rem; }
+  .dna-notable { color: #0645ad; font-weight: bold; }
+</style>
