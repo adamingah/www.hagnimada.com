@@ -4,6 +4,101 @@ title: live music — hagnimada
 description: Concerts I've been to.
 permalink: /hobbies/livemusic/
 ---
-<p>Coming soon.</p>
+<p> These are the concerts I've been to. </p>
+
+<p>Because I moved around a bunch I never quite got to see a Tyler, The Creator Concert. It's crazy to me that I've been
+ trying to see him since 2019 and he's gone on tour like three times.</p>
+
+<p>I can die happy if I get to see Bruno Mars, Steve Lacy, or Sting live before I die. Celine Dion too is a big ask too
+ but a boy can dream right? I know she's still alive but I'd kill to see Sade. Also sad I'll never see Michael Jackson.</p>
+
+<h2 class="year-heading">2018</h2>
+<ul class="year-list">
+  <li>Brockhampton (Denver)</li>
+</ul>
+
+<h2 class="year-heading">2019</h2>
+<ul class="year-list">
+  <li>Brockhampton + Slowthai + 100gecs (Denver)</li>
+</ul>
+
+<h2 class="year-heading">2023</h2>
+<ul class="year-list">
+  <li>TWICE (Atlanta)</li>
+  <li>Erykah Badu (Birmingham)</li>
+  <li>JPEGMafia (Atlanta)</li>
+  <li>T-Pain (Birmingham)</li>
+</ul>
+
+<h2 class="year-heading">2024</h2>
+<ul class="year-list">
+  <li>Faye Webster (Birmingham)</li>
+  <li>Omar Apollo + Malcolm Todd (Atlanta)</li>
+  <li><span class="cancelled">Drake (cancelled)</span></li>
+  <li><span class="cancelled">Freddie Gibbs (cancelled)</span></li>
+  <li><span class="cancelled">Ryan Beatty (cancelled)</span></li>
+</ul>
+
+<h2 class="year-heading">2025</h2>
+<ul class="year-list">
+  <li>Malcolm Todd (Denver)</li>
+  <li>The Weeknd + Playboi Carti (Seattle)</li>
+  <li>Raveena (Seattle)</li>
+  <li>Mk.Gee (Denver)</li>
+  <li>Kali Uchis (Seattle)</li>
+  <li>Aminé (Seattle)</li>
+  <li>Dijon (Seattle)</li>
+  <li>DJ Mandy (Seattle)</li>
+  <li class="concert-festival">
+    <span class="festival-label">Lollapalooza</span>
+    <ul class="festival-acts">
+      <li>Young Miko</li>
+      <li>Clairo</li>
+      <li>Damiano David</li>
+      <li>Mk.Gee</li>
+      <li>Katseye</li>
+      <li>W2E</li>
+      <li>Remi Wolf</li>
+      <li>The Marías</li>
+      <li>ASAP Rocky</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 class="year-heading">2026</h2>
+<ul class="year-list">
+  <li>Girlpuppy + Sarah Kinsley (Seattle)</li>
+  <li>Pinkpantheress (Seattle)</li>
+</ul>
 
 <p><a href="{{ '/hobbies/' | relative_url }}">← back to hobbies</a></p>
+
+<style>
+  .cancelled {
+    opacity: 0.45;
+    text-decoration: line-through;
+  }
+  .concert-festival {
+    cursor: pointer;
+    user-select: none;
+    margin-top: 0.4rem;
+  }
+  .concert-festival .festival-label::before { content: "▶ "; }
+  .concert-festival.open .festival-label::before { content: "▼ "; }
+  .festival-acts {
+    display: none;
+    list-style: none;
+    padding: 0 0 0 1.2rem;
+    margin: 0.2rem 0 0;
+  }
+  .festival-acts li { margin: 0.15rem 0; }
+  .concert-festival.open > .festival-acts { display: block; }
+</style>
+
+<script>
+  document.querySelectorAll('.concert-festival').forEach(function (el) {
+    el.addEventListener('click', function () {
+      el.classList.toggle('open');
+    });
+  });
+</script>

@@ -19,10 +19,11 @@ permalink: /countries/
 
 <p><a href="{{ '/' | relative_url }}">← back</a></p>
 
-<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-<script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
-<script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/core.js" defer></script>
+<script src="https://cdn.amcharts.com/lib/4/maps.js" defer></script>
+<script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js" defer></script>
 <script>
+document.addEventListener('DOMContentLoaded', function () {
   var chart = am4core.create("map", am4maps.MapChart);
   chart.geodata = am4geodata_worldLow;
   chart.projection = new am4maps.projections.Miller();
@@ -56,6 +57,7 @@ permalink: /countries/
   visitedHover.properties.fill = am4core.color("#0000cc");
 
   chart.zoomControl = new am4maps.ZoomControl();
+});
 </script>
 
 <style>

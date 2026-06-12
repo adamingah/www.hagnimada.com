@@ -139,8 +139,9 @@ permalink: /dna/
 
 <p><a href="{{ '/aboutme/' | relative_url }}">← back to Wikipedia</a></p>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 <script>
+document.addEventListener('DOMContentLoaded', function () {
   const topLevel = [
     { label: 'East Asian',                    value: 91.1, color: '#4e9af1' },
     { label: 'Western Asian & North African', value: 4.9,  color: '#f4a261' },
@@ -171,7 +172,7 @@ permalink: /dna/
     ],
   };
 
-  function buildChart(data) {
+  function buildChart(data, isTopLevel) {
     return new Chart(document.getElementById('dnaChart'), {
       type: 'doughnut',
       data: {
@@ -194,17 +195,17 @@ permalink: /dna/
           }
         },
         onClick(e, elements) {
-          if (!elements.length) return;
-          const clicked = topLevel[elements[0].index];
+          if (!isTopLevel || !elements.length) return;
+          const clicked = data[elements[0].index];
           if (!drillDown[clicked.label]) return;
           chart.destroy();
-          chart = buildChart(drillDown[clicked.label]);
+          chart = buildChart(drillDown[clicked.label], false);
           document.querySelector('.dna-drill-label').innerHTML =
             `<strong>${clicked.label}</strong> — <a href="#" id="dna-back">← back to overview</a>`;
           document.getElementById('dna-back').addEventListener('click', e => {
             e.preventDefault();
             chart.destroy();
-            chart = buildChart(topLevel);
+            chart = buildChart(topLevel, true);
             document.querySelector('.dna-drill-label').textContent = 'Click a segment to see the breakdown.';
           });
         }
@@ -212,7 +213,8 @@ permalink: /dna/
     });
   }
 
-  let chart = buildChart(topLevel);
+  let chart = buildChart(topLevel, true);
+});
 </script>
 
 <style>

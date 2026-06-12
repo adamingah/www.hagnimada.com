@@ -135,6 +135,40 @@ a:focus-visible {
   margin: var(--space-lg) auto;
 }
 
+/* ---------- Year-grouped lists (blog, projects, concerts) ----------
+   Markup: an <h2 class="year-heading"> followed by a <ul class="year-list">
+   for each year group. Headings sit outside the lists; items have no bullets. */
+.year-heading {
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: bold;
+  margin: var(--space-lg) 0 0.4rem;
+}
+.year-heading:first-of-type { margin-top: 0; }
+.year-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.year-list li { margin: 0.2rem 0; }
+.year-list:last-of-type { margin-bottom: var(--space-lg); }
+
+/* ---------- Post pages (blog entries, collection pages) ---------- */
+.post-body p {
+  margin: 0 0 1.2rem;
+  line-height: 1.7;
+}
+.post-hero { margin: 0 0 2rem; }
+.post-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.post-embed {
+  display: block;
+  margin: 0 0 2rem;
+}
+
 /* ---------- Portfolio list ---------- */
 .portfolio-year {
   margin: var(--space-lg) 0 var(--space);

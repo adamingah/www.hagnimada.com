@@ -4,37 +4,22 @@ title: blog — hagnimada
 description: Short posts.
 permalink: /blog/
 ---
-<ul class="blog-list">
-  <li class="blog-year">📍 Pinned 📍</li>
-  <li><a href="#">What I keep in my wallet</a></li>
-  <li><a href="#">What I keep on my key chain</a></li><br>
+<h2 class="year-heading">📍 Pinned 📍</h2>
+<ul class="year-list">
+  <li><a href="{{ '/blog/wallet/' | relative_url }}">What I keep in my wallet</a></li>
+  <li><a href="{{ '/blog/keychain/' | relative_url }}">What I keep on my key chain</a></li>
+</ul>
 
-  <li class="blog-year">2026</li>
-  <li><a href="#">1 year in seattle</a></li>
-  <li><a href="{{ '/blog/shoes/' | relative_url }}">my favorite shoes of all time</a></li><br>
+<h2 class="year-heading">2026</h2>
+<ul class="year-list">
+  <li><a href="{{ '/blog/one-year-in-seattle/' | relative_url }}">1 year in seattle</a></li>
+  <li><a href="{{ '/blog/shoes/' | relative_url }}">my favorite shoes of all time</a></li>
+</ul>
 
-  <li class="blog-year">2025</li>
-  <li><a href="#">Graduation</a></li>
-  <li><a href="{{ '/blog/best-sleep/' | relative_url }}">The best sleep I've ever had</a></li><br>
-
+<h2 class="year-heading">2025</h2>
+<ul class="year-list">
+  <li><a href="{{ '/blog/this-is-it/' | relative_url }}">"This is it"</a></li>
+  <li><a href="{{ '/blog/best-sleep/' | relative_url }}">The best sleep I've ever had</a></li>
 </ul>
 
 <p><a href="{{ '/' | relative_url }}">← back</a></p>
-
-<style>
-  .blog-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 var(--space-lg);
-  }
-  .blog-list li {
-    margin: 0.2rem 0;
-  }
-  .blog-year {
-    font-weight: bold;
-    margin-top: 1.2rem;
-  }
-  .blog-year:first-child {
-    margin-top: 0;
-  }
-</style>
